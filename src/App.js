@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import store from './store';
 import {Provider} from 'react-redux';
+import DogListContainer from './components/DogListContainer';
 
 class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
+          <DogListContainer />
         </div>
       </Provider>
     );
