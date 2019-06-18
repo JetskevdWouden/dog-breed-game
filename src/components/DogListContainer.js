@@ -1,17 +1,25 @@
 import React, { Component } from "react";
 import DogList from './DogList'
-import * as request from 'superagent'
+import { getDogs } from '../actions/dogs'
+import { connect } from "react-redux";
 
 
-export default class DogListContainer extends Component {
+class DogListContainer extends Component {
+    componentDidMount() {
+        this.props.getDogs();
+    }
 
-
-    render(){
+    render() {
         console.log("hello")
-        return (
-            <div>
-                <DogList />
-            </div>
-        )
+        if(!this.props.dogs) return 'Have patience the dogs are coming...'
+        return <DogList dogs={this.props.dogs} />
     }
 }
+
+const mapStateToProps = (reduxState) => {
+    return {
+        dogs: reduxState.dogs
+    }
+}
+
+export default connect(mapStateToProps, { getDogs })(DogListContainer)
