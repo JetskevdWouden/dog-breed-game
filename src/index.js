@@ -1,8 +1,10 @@
 import React from 'react';
+import { combineReducers } from 'redux'
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import dogs from './dogs'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -10,3 +12,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+export default combineReducers({
+    dogs
+  })
