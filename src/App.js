@@ -1,26 +1,23 @@
 import React from 'react';
 import './App.css';
-import {store} from './store';
-import {Provider} from 'react-redux'
+import store from './store';
+import {Provider} from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Dog breed games
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+x            <h1 className="App-title">Dog Breeds App</h1>
+          </header>
+          <p className="App-intro">
+            To get started, edit <code>src/App.js</code> and save to reload.
+          </p>
+        </div>
+      </Provider>
+    );
+  }
 }
 
 export default App;
