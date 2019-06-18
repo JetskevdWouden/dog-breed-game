@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {store} from './store';
+import {Provider} from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Dog breed games
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Dog Breeds App</h1>
+          </header>
+        </div>
+      </Provider>
+    );
+  }
 }
 
 export default App;
